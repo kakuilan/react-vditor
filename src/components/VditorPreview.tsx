@@ -11,7 +11,6 @@ export interface IVditorPreviewProps {
 
 const VditorPreview: FC<IVditorPreviewProps> = ({
                                                     markdown,
-                                                    zindex,
                                                     options,
                                                     customClass,
                                                 }) => {
