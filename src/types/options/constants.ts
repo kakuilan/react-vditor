@@ -146,7 +146,8 @@ export abstract class Constants {
         "cmake",
         "mathematica",
     ]
-    public static readonly CDN = `https://cdn.jsdelivr.net/npm/vditor@${VDITOR_VERSION}`
+    //public static readonly CDN = `https://cdn.jsdelivr.net/npm/vditor@${VDITOR_VERSION}`
+    public static readonly CDN = `https://registry.npmmirror.com/vditor/${VDITOR_VERSION}/files`
     public static readonly MARKDOWN_OPTIONS: IPreviewMarkdown = {
         autoSpace: false,
         codeBlockPreview: true,

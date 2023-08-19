@@ -1,17 +1,19 @@
-import React, { FC, createRef, useEffect } from "react"
+import React, {FC, createRef, useEffect} from "react"
 import Vditor from "vditor"
 
-import { defaultWYSIWYGOptions } from "../types/options"
-import { importDefaultTheme } from "../utils"
-import { IVditorEditorProps } from "./Vditor"
+import {defaultWYSIWYGOptions} from "../types/options"
+import {importDefaultTheme} from "../utils"
+import {IVditorEditorProps} from "./Vditor"
 
-export interface IVditorWYSIWYGEditorProps extends IVditorEditorProps {}
+export interface IVditorWYSIWYGEditorProps extends IVditorEditorProps {
+}
 
 const VditorWYSIWYGEditor: FC<IVditorWYSIWYGEditorProps> = ({
-    keyID,
-    options,
-    bindVditor,
-}) => {
+                                                                keyID,
+                                                                zindex,
+                                                                options,
+                                                                bindVditor,
+                                                            }) => {
     const vditorRef = createRef<HTMLDivElement>()
     useEffect(() => {
         // initial Vditor

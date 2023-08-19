@@ -1,7 +1,7 @@
-import React, { createRef, FC, useEffect } from "react"
+import React, {createRef, FC, useEffect} from "react"
 import Preivew from "vditor/dist/method.min"
 
-import { importDefaultTheme } from "../utils"
+import {importDefaultTheme} from "../utils"
 
 export interface IVditorPreviewProps {
     markdown: string
@@ -10,10 +10,12 @@ export interface IVditorPreviewProps {
 }
 
 const VditorPreview: FC<IVditorPreviewProps> = ({
-    markdown,
-    options,
-    customClass,
-}) => {
+                                                    markdown,
+                                                    zindex,
+                                                    options,
+                                                    customClass,
+                                                }) => {
+
     const previewRef = createRef<HTMLDivElement>()
 
     useEffect(() => {

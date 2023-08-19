@@ -1,17 +1,19 @@
-import React, { FC, createRef, useEffect } from "react"
+import React, {FC, createRef, useEffect} from "react"
 import Vditor from "vditor"
 
-import { defaultSVOptions } from "../types/options"
-import { importDefaultTheme } from "../utils"
-import { IVditorEditorProps } from "./Vditor"
+import {defaultSVOptions} from "../types/options"
+import {importDefaultTheme} from "../utils"
+import {IVditorEditorProps} from "./Vditor"
 
-export interface IVditorSVEditorProps extends IVditorEditorProps {}
+export interface IVditorSVEditorProps extends IVditorEditorProps {
+}
 
 const VditorSVEditor: FC<IVditorSVEditorProps> = ({
-    keyID,
-    options,
-    bindVditor,
-}) => {
+                                                      keyID,
+                                                      zindex,
+                                                      options,
+                                                      bindVditor,
+                                                  }) => {
     const vditorRef = createRef<HTMLDivElement>()
 
     useEffect(() => {

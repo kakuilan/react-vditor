@@ -1,21 +1,26 @@
-import React, { FC, createRef, useEffect } from "react"
+import React, {FC, createRef, useEffect} from "react"
 import Vditor from "vditor"
 
-import { IOptions, defaultOptions } from "../types/options"
-import { importDefaultTheme } from "../utils"
+import {IOptions, defaultOptions} from "../types/options"
+import {importDefaultTheme} from "../utils"
 
 export interface IVditorEditorProps {
-    keyID: string
-    options?: IOptions
-    bindVditor?(vditor: Vditor): void
+    keyID: string;
+    zindex: number;
+    options?: IOptions;
+
+    bindVditor?(vditor: Vditor): void;
 }
 
 const VditorEditor: FC<IVditorEditorProps> = ({
-    keyID,
-    options,
-    bindVditor,
-}) => {
+                                                  keyID,
+                                                  zindex,
+                                                  options,
+                                                  bindVditor,
+                                              }) => {
+
     const vditorRef = createRef<HTMLDivElement>()
+    let zidx = !!zindex ? zindex : 99;
 
     useEffect(() => {
         // initial Vditor
@@ -28,7 +33,7 @@ const VditorEditor: FC<IVditorEditorProps> = ({
         importDefaultTheme(opts)
     }, [])
 
-    return <div id={`vditor-editor-${keyID}`} ref={vditorRef}></div>
+    return <div id={`vditor-editor-${keyID}`} style={{zIndex: zidx}} ref={vditorRef}></div>
 }
 
 export default VditorEditor
