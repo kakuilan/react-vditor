@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from "react"
 import Vditor from "vditor"
-import { VditorIREditor } from "react-vditor"
+import { VditorIREditor } from "@kakuilan/react-vditor"
 
 const TestVditorIREditor: FC = () => {
     const [vditor, setVditor] = useState<Vditor>()

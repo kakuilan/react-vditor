@@ -1,5 +1,5 @@
 import React, { FC, useState, useEffect } from "react"
-import { VditorPreview } from "react-vditor"
+import { VditorPreview } from "@kakuilan/react-vditor"
 
 const TestVditorPreivew: FC = () => {
     const [markdown, setMarkdown] = useState("")
