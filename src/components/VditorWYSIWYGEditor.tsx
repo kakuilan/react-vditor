@@ -15,6 +15,8 @@ const VditorWYSIWYGEditor: FC<IVditorWYSIWYGEditorProps> = ({
                                                                 bindVditor,
                                                             }) => {
     const vditorRef = createRef<HTMLDivElement>()
+    let zidx = !!zindex ? zindex : 99;
+
     useEffect(() => {
         // initial Vditor
         const id = `vditor-editor-wysiwyg-${keyID}`
@@ -26,7 +28,7 @@ const VditorWYSIWYGEditor: FC<IVditorWYSIWYGEditorProps> = ({
         importDefaultTheme(opts)
     }, [])
 
-    return <div id={`vditor-editor-wysiwyg-${keyID}`} ref={vditorRef}></div>
+    return <div id={`vditor-editor-wysiwyg-${keyID}`} style={{zIndex: zidx}} ref={vditorRef}></div>
 }
 
 export default VditorWYSIWYGEditor

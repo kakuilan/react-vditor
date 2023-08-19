@@ -15,6 +15,7 @@ const VditorIREditor: FC<IVditorIREditorProps> = ({
                                                       bindVditor,
                                                   }) => {
     const vditorRef = createRef<HTMLDivElement>()
+    let zidx = !!zindex ? zindex : 99;
 
     useEffect(() => {
         // initial Vditor
@@ -27,7 +28,7 @@ const VditorIREditor: FC<IVditorIREditorProps> = ({
         importDefaultTheme(opts)
     }, [])
 
-    return <div id={`vditor-editor-ir-${keyID}`} ref={vditorRef}></div>
+    return <div id={`vditor-editor-ir-${keyID}`} style={{zIndex: zidx}} ref={vditorRef}></div>
 }
 
 export default VditorIREditor
