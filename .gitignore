@@ -111,6 +111,5 @@ dist
 .settings/
 .vscode/
 .hbuilderx/
-*.log
 *.DS_Store
-
+yarn.lock
