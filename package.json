@@ -28,9 +28,7 @@
     "React",
     "markdown editor"
   ],
-  "author": {
-    "name": "kakuilan"
-  },
+  "author": "kakuilan",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kakuilan/react-vditor/issues"
