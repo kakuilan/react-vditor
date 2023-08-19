@@ -105,3 +105,12 @@ dist
 
 # TernJS port file
 .tern-port
+
+.idea/
+.project/
+.settings/
+.vscode/
+.hbuilderx/
+*.log
+*.DS_Store
+
