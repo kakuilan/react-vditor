@@ -1,6 +1,4 @@
-# This is a basic workflow to help you get started with Actions
-
-name: GitHub Pages
+name: test
 
 on:
   push:
@@ -10,18 +8,19 @@ on:
 
 jobs:
   build:
+    concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+      - uses: actions/checkout@v3
 
-      - name: Install And Build
+      - name: Install and Build
         run: |
           cd __test__
-          npm install
+          npm ci
           npm run build
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.0.0
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages
-          folder: docs
+          folder: build
