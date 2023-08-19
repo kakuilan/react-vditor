@@ -6,7 +6,7 @@ import {importDefaultTheme} from "../utils"
 
 export interface IVditorEditorProps {
     keyID: string;
-    zindex: number;
+    zindex?: number;
     options?: IOptions;
 
     bindVditor?(vditor: Vditor): void;

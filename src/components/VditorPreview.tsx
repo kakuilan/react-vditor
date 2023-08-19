@@ -1,5 +1,5 @@
 import React, {createRef, FC, useEffect} from "react"
-import Preivew from "vditor/dist/method.min"
+import Preivew from "vditor/dist/method.min.js"
 
 import {importDefaultTheme} from "../utils"
 
