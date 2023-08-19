@@ -13,7 +13,7 @@ jobs:
       - name: Install and Build
         run: |
           cd __test__
-          npm ci
+          npm install
           npm run build
 
       - name: Deploy
