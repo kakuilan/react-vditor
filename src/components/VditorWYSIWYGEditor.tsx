@@ -1,7 +1,7 @@
 import React, {FC, createRef, useEffect} from "react"
 import Vditor from "vditor"
 
-import {defaultWYSIWYGOptions} from "../types/options"
+import {defaultOptions, defaultWYSIWYGOptions} from "../types/options"
 import {importDefaultTheme} from "../utils"
 import {IVditorEditorProps} from "./Vditor"
 
@@ -20,7 +20,11 @@ const VditorWYSIWYGEditor: FC<IVditorWYSIWYGEditorProps> = ({
     useEffect(() => {
         // initial Vditor
         const id = `vditor-editor-wysiwyg-${keyID}`
-        let opts = !!options ? options : defaultWYSIWYGOptions
+        //let opts = !!options ? options : defaultOptions;
+        let opts = {
+            ...defaultOptions,
+            ...options,
+        };
         const vditor = new Vditor(id, opts)
         if (!!bindVditor) {
             bindVditor(vditor)

@@ -1,7 +1,7 @@
 import React, {FC, createRef, useEffect} from "react"
 import Vditor from "vditor"
 
-import {defaultSVOptions} from "../types/options"
+import {defaultOptions, defaultSVOptions} from "../types/options"
 import {importDefaultTheme} from "../utils"
 import {IVditorEditorProps} from "./Vditor"
 
@@ -20,7 +20,11 @@ const VditorSVEditor: FC<IVditorSVEditorProps> = ({
     useEffect(() => {
         // initial Vditor
         const id = `vditor-editor-sv-${keyID}`
-        let opts = !!options ? options : defaultSVOptions
+        //let opts = !!options ? options : defaultOptions;
+        let opts = {
+            ...defaultOptions,
+            ...options,
+        };
         const vditor = new Vditor(id, opts)
         if (!!bindVditor) {
             bindVditor(vditor)

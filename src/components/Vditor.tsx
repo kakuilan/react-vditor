@@ -25,7 +25,11 @@ const VditorEditor: FC<IVditorEditorProps> = ({
     useEffect(() => {
         // initial Vditor
         const id = `vditor-editor-${keyID}`
-        let opts = !!options ? options : defaultOptions
+        //let opts = !!options ? options : defaultOptions;
+        let opts = {
+            ...defaultOptions,
+            ...options,
+        };
         const vditor = new Vditor(id, opts)
         if (!!bindVditor) {
             bindVditor(vditor)

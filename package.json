@@ -1,6 +1,6 @@
 {
   "name": "@kakuilan/react-vditor",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Vditor in React",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",

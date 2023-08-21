@@ -1,7 +1,7 @@
 import React, {FC, createRef, useEffect} from "react"
 import Vditor from "vditor"
 
-import {defaultIROptions} from "../types/options"
+import {defaultIROptions, defaultOptions} from "../types/options"
 import {importDefaultTheme} from "../utils"
 import {IVditorEditorProps} from "./Vditor"
 
@@ -20,7 +20,11 @@ const VditorIREditor: FC<IVditorIREditorProps> = ({
     useEffect(() => {
         // initial Vditor
         const id = `vditor-editor-ir-${keyID}`
-        let opts = !!options ? options : defaultIROptions
+        //let opts = !!options ? options : defaultOptions;
+        let opts = {
+            ...defaultOptions,
+            ...options,
+        };
         const vditor = new Vditor(id, opts)
         if (!!bindVditor) {
             bindVditor(vditor)
